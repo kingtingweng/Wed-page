@@ -378,8 +378,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 切歌時先停止上一首，再設定新音檔；src 會自動啟動載入
     // 不額外呼叫 load()，避免中斷瀏覽器正在排程的播放請求
     audioElement.pause();
-    audioElement.src = new URL(song.audioUrl, document.baseURI).href;
     audioElement.preload = 'auto';
+    audioElement.src = new URL(song.audioUrl, document.baseURI).href;
+    audioElement.load();
 
     renderPlaylist();
 
@@ -423,7 +424,9 @@ document.addEventListener('DOMContentLoaded', () => {
           : mediaError && mediaError.code === 3
             ? '音檔解碼失敗'
             : '音檔載入失敗';
-      showToast(`⚠️ ${reason}`);
+      const detail = err && err.name ? err.name : 'UnknownError';
+      const code = mediaError ? mediaError.code : '無';
+      showToast(`⚠️ ${reason}（${detail}／MediaError ${code}）`);
       stopAudioTrack(true);
     });
   }
