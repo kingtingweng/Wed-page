@@ -375,15 +375,21 @@ document.addEventListener('DOMContentLoaded', () => {
       musicMvLinkEl.title = `在 YouTube 上聆聽 ${song.artist} - ${song.title} MV 原曲`;
     }
 
-    // 使用完整網址載入音檔，讓含空格及中文的檔名能正確編碼
+    // 切歌時先停止上一首，再設定新音檔；src 會自動啟動載入
+    // 不額外呼叫 load()，避免中斷瀏覽器正在排程的播放請求
+    audioElement.pause();
     audioElement.src = new URL(song.audioUrl, document.baseURI).href;
     audioElement.preload = 'auto';
-    audioElement.load();
 
     renderPlaylist();
 
     if (isPlaying || autoPlay) {
-      playAudioTrack();
+      // 等待新音檔可播放後再開始，避免切歌時過早呼叫 play()
+      const playWhenReady = () => {
+        audioElement.removeEventListener('canplay', playWhenReady);
+        playAudioTrack();
+      };
+      audioElement.addEventListener('canplay', playWhenReady);
     } else {
       if (playLabel) playLabel.textContent = `播放 ${song.title}`;
     }
