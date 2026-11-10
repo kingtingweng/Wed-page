@@ -320,6 +320,17 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTrack(nextIdx, true);
   });
 
+  audioElement.addEventListener('error', () => {
+    const mediaError = audioElement.error;
+    console.error('音檔載入錯誤', {
+      code: mediaError ? mediaError.code : 'unknown',
+      message: mediaError ? mediaError.message : '',
+      source: audioElement.currentSrc,
+      networkState: audioElement.networkState,
+      readyState: audioElement.readyState
+    });
+  });
+
   function renderPlaylist() {
     if (!playlistItemsList) return;
     playlistItemsList.innerHTML = '';
@@ -364,7 +375,9 @@ document.addEventListener('DOMContentLoaded', () => {
       musicMvLinkEl.title = `在 YouTube 上聆聽 ${song.artist} - ${song.title} MV 原曲`;
     }
 
-    audioElement.src = song.audioUrl;
+    // 使用完整網址載入音檔，讓含空格及中文的檔名能正確編碼
+    audioElement.src = new URL(song.audioUrl, document.baseURI).href;
+    audioElement.preload = 'auto';
     audioElement.load();
 
     renderPlaylist();
@@ -387,8 +400,24 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast(`🎵 正在播放：${currentSong.title} - ${currentSong.artist}`);
       renderPlaylist();
     }).catch(err => {
-      console.warn("自動播放被瀏覽器阻擋或找不到音檔", err);
-      showToast(`⚠️ 播放失敗，請檢查專案中是否已放入該首 MP3 檔案！`);
+      const mediaError = audioElement.error;
+      console.error("音樂播放失敗", {
+        name: err && err.name,
+        message: err && err.message,
+        mediaErrorCode: mediaError ? mediaError.code : null,
+        mediaErrorMessage: mediaError ? mediaError.message : '',
+        source: audioElement.currentSrc,
+        networkState: audioElement.networkState,
+        readyState: audioElement.readyState
+      });
+      const reason = err && err.name === 'NotAllowedError'
+        ? '瀏覽器阻擋播放，請再按一次播放鍵'
+        : mediaError && mediaError.code === 4
+          ? '音檔格式或網址無法辨識'
+          : mediaError && mediaError.code === 3
+            ? '音檔解碼失敗'
+            : '音檔載入失敗';
+      showToast(`⚠️ ${reason}`);
       stopAudioTrack(true);
     });
   }
