@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 1,
       title: "LATATA",
       artist: "(G)I-DLE",
-      audioUrl: "audio/ LATATA.mp3", // ⬅️ 請對應你在專案 audio 資料夾放的 mp3 檔名
+      audioUrl: "audio/LATATA.mp3", // ⬅️ 請對應你在專案 audio 資料夾放的 mp3 檔名
       mvUrl: "https://youtu.be/9mQk7Evt6Vs?si=sLbDdc6xonwIT1Of"
     },
     {
