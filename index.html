@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="翁珮婷 (Ting) 的個人作品集 · 台南應用科技大學，專精 TouchDesigner 即時互動視覺演算、影音節奏剪輯與生活光影隨拍。">
+    <title>翁珮婷 · Ting | 新媒體視覺演算 · 影音剪輯 · 光影紀實</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Google Fonts: Editorial Serif & Modern Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Starry Night Sky Canvas (Active in Dark Mode) -->
+    <canvas id="starry-sky" class="starry-sky-canvas" aria-hidden="true"></canvas>
+
+    <!-- Ambient Subtle Atmosphere -->
+    <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+
+    <div class="page-wrapper">
+
+        <!-- Navigation Bar -->
+        <header class="top-nav">
+            <a href="#profile-hero" class="brand">
+                <span class="brand-monogram">T</span>
+                <span class="brand-text">
+                    <span class="brand-name">Ting's Space</span>
+                    <span class="brand-sub">Visual & Media</span>
+                </span>
+            </a>
+
+            <!-- Quick Navigation Menu -->
+            <nav class="nav-links" id="nav-menu" aria-label="頁面導覽">
+                <a href="#profile-hero" class="nav-link active">首頁</a>
+                <a href="#about-section" class="nav-link">關於</a>
+                <a href="#skills-section" class="nav-link">專長</a>
+                <a href="#portfolio-section" class="nav-link">作品</a>
+                <a href="#awards-section" class="nav-link">榮譽</a>
+                <a href="#widgets-section" class="nav-link">隨身聽</a>
+                <a href="#timeline-section" class="nav-link">歷程</a>
+                <a href="#contact-section" class="nav-link">聯絡</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" id="space-like-nav-btn" class="space-like-pill" title="為珮婷的創作空間送上應援心意"
+                    aria-label="Ting's Space 應援指數">
+                    <span class="like-heart-icon">💖</span>
+                    <span class="like-text">應援</span>
+                    <span class="like-counter-val" id="nav-like-count">1,314</span>
+                </button>
+                <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="切換日光工坊與暗室夜景主題"
+                    title="點擊切換色調（日光紙本 / 暗室星空）">
+                    <span id="theme-icon">☀️</span>
+                    <span id="theme-text">日光工坊</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section: Curated Editorial Profile -->
+        <section class="hero-card" id="profile-hero">
+            <div class="hero-inner-layout">
+
+                <div class="hero-avatar-column">
+                    <div class="avatar-container">
+                        <div class="avatar-ring">
+                            <img src="photo/4254.JPG" alt="翁珮婷的個人頭像 - 萌寵白龍貓" class="avatar-img">
+                        </div>
+                        <!-- Interactive Little Totoro Companion Badge -->
+                        <button type="button" class="mini-pet-badge" id="pet-trigger" title="點我摸摸白龍貓！🐾"
+                            aria-label="互動小龍貓">
+                            <img src="photo/0284.jpg" alt="龍貓圖標">
+                            <span class="pet-status-dot" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="artist-seal-card">
+                        <span class="seal-icon">✦</span>
+                        <div class="seal-text">
+                            <strong>STUDENT CREATOR</strong>
+                            <span>Tainan Univ. of Technology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-content">
+                    <div class="hero-meta-kicker">
+                        <span class="editorial-kicker">PORTFOLIO & ARCHIVE · 2026</span>
+                        <span class="kicker-divider">/</span>
+                        <span class="kicker-status">AVAILABLE FOR PROJECTS</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="hero-name-zh">翁珮婷</span>
+                        <span class="hero-name-en">Ting</span>
+                        <span class="hero-title-tagline">新媒體視覺演算 · 影音節奏剪輯 · 生活光影紀實</span>
+                    </h1>
+
+                    <div class="badge-row">
+                        <span class="tag-badge">南應大 TUT</span>
+                        <span class="tag-badge">國立後壁高中 多媒科</span>
+                        <span class="tag-badge">♑ 摩羯座 Capricorn</span>
+                        <span class="tag-badge">TouchDesigner</span>
+                        <span class="tag-badge">Video Editing</span>
+                        <span class="tag-badge">IPhone 17 Pro Photography</span>
+                    </div>
+
+                    <p class="hero-bio">
+                        目前就讀於<strong>台南應用科技大學</strong>，目前正在深耕於 <strong>TouchDesigner
+                            即時視覺演算、影音節奏剪輯與生活光影隨拍</strong>。平時喜歡騎著摩托車並帶著手機穿梭在市區的街角與海岸、戴上耳機感受音樂的律動，也享受騎車迎風前行於台1線公路的自由。用快門收藏日常光影，正常嘗試用演算法構築動態美學。
+                    </p>
+
+                    <!-- Editorial Quick Stats & Endorsement Bar -->
+                    <div class="hero-stats-bar">
+                        <div class="hero-stat-cell">
+                            <span class="stat-number">13<small>+</small></span>
+                            <span class="stat-label">精選影像作品</span>
+                        </div>
+                        <div class="hero-stat-cell">
+                            <span class="stat-number">15<small>項</small></span>
+                            <span class="stat-label">榮譽獎狀與研習</span>
+                        </div>
+                        <div class="hero-stat-cell">
+                            <span class="stat-number">55<small>km</small></span>
+                            <span class="stat-label">台1線公路兜風</span>
+                        </div>
+                        <div class="hero-stat-cell hero-stat-like">
+                            <button type="button" class="space-like-main-btn" id="space-like-btn"
+                                title="點擊為珮婷的創作空間送上心意！">
+                                <span class="space-like-heart">💖</span>
+                                <span>按讚應援</span>
+                                <span class="space-like-number" id="main-like-count">1,314</span>
+                            </button>
+                            <!-- Hidden technical elements kept for script compatibility -->
+                            <span id="popularity-tier" style="display: none;">🌟 人氣爆棚 · 萌寵達人</span>
+                            <div id="popularity-progress" style="display: none; width: 88%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Profile Info Cards: Editorial Perspectives -->
+        <section class="info-section">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">PERSPECTIVES</span>
+                <h2 class="info-section-title">
+                    <span>個人特質與創作向度</span>
+                </h2>
+                <p class="section-desc">踏實自律的理性架構，結合敏銳溫潤的感性光影感知。</p>
+            </div>
+
+            <div class="info-cards-grid">
+
+                <!-- Name & Identity Card -->
+                <article class="info-card">
+                    <div class="info-card-header">
+                        <span class="info-card-num">01</span>
+                        <div class="info-card-icon">👤</div>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">CREATOR IDENTITY</span>
+                        <div class="info-card-value">翁珮婷 · Ting</div>
+                        <div class="info-tag-list">
+                            <span class="info-mini-tag">真誠隨和</span>
+                            <span class="info-mini-tag">細膩觀察</span>
+                            <span class="info-mini-tag">生活記錄</span>
+                        </div>
+                        <p class="info-card-desc">
+                            個性真誠隨和，習慣在安靜中敏銳捕捉日常的光影流轉與人情溫度。相信最能觸動人心的視覺力量，往往源自於對生活細節的深切體察，並將這些感動化為鏡頭與創作中的永恆瞬間。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Constellation & Character Card -->
+                <article class="info-card">
+                    <div class="info-card-header">
+                        <span class="info-card-num">02</span>
+                        <div class="info-card-icon">♑</div>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">CONSTELLATION & MINDSET</span>
+                        <div class="info-card-value">摩羯座 · Capricorn</div>
+                        <div class="info-tag-list">
+                            <span class="info-mini-tag">踏實專注</span>
+                            <span class="info-mini-tag">節奏自律</span>
+                            <span class="info-mini-tag">深耕細作</span>
+                        </div>
+                        <p class="info-card-desc">
+                            習慣以沉穩務實的態度面對創作，對邏輯與細節有著不妥協的堅持。無論是處理複雜的視覺演算節點，或是反覆雕琢影片剪輯的節奏，總是展現出極致的耐性，直到結構與美感達到完美的平衡。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Education Card -->
+                <article class="info-card">
+                    <div class="info-card-header">
+                        <span class="info-card-num">03</span>
+                        <div class="info-card-icon">🎓</div>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">ACADEMIC FOUNDATION</span>
+                        <div class="info-card-value">求學歷程與創作足跡</div>
+                        <div class="info-tag-list">
+                            <span class="info-mini-tag">後壁高中多媒科</span>
+                            <span class="info-mini-tag">南應大 TUT</span>
+                            <span class="info-mini-tag">新媒體實踐</span>
+                        </div>
+                        <p class="info-card-desc">
+                            從後壁高中多媒體設計科奠定基礎，到現在於南應大多媒體與設計系深造，我在這座充滿人文氣息的城市中不斷開拓視野。透過扎實的專案實作，將日常所見與前沿互動科技結合，一步步形塑出屬於自己的創作風格。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobbies & Living Card -->
+                <article class="info-card">
+                    <div class="info-card-header">
+                        <span class="info-card-num">04</span>
+                        <div class="info-card-icon">🛵</div>
+                    </div>
+                    <div class="info-card-content">
+                        <span class="info-card-label">LIFE & INSPIRATION</span>
+                        <div class="info-card-value">音樂 · 兜風 · 光影隨拍</div>
+                        <div class="info-tag-list">
+                            <span class="info-mini-tag">隨身聽旋律</span>
+                            <span class="info-mini-tag">台1線迎風</span>
+                            <span class="info-mini-tag">定焦慢拍</span>
+                        </div>
+                        <p class="info-card-desc">
+                            戴上耳機讓節奏沉澱思緒，騎乘機車在嘉義與台南的公路上感受微風掠過，手持相機捕捉斜陽穿過樹梢的瞬間，這些都是最純粹的創作靈感泉源。
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             Section 1: About Me (關於我)
+             ========================================== -->
+        <section class="about-section" id="about-section">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">01 / ABOUT CREATOR</span>
+                <h2 class="info-section-title">
+                    <span>關於創作者 · 設計理念與生活哲學</span>
+                </h2>
+                <p class="section-desc">「以理性節點構建視覺架構，以溫柔快門捕捉生活溫度。」將熱愛傾注於每一次影像敘事與互動連動之中。</p>
+            </div>
+
+            <div class="about-content-grid">
+                <div class="about-intro-card">
+                    <div class="about-header-row">
+                        <span class="tag-badge">視覺演算 · 影音剪輯 · 攝影</span>
+                        <span class="about-location">📍 台灣 · 嘉義水上 ↔ 台南永康</span>
+                    </div>
+                    <h3 class="about-card-title">我是翁珮婷 (Ting) —— 探索即時演算、鏡頭語言與生活光影的創作者</h3>
+                    <p class="about-card-p">
+                        目前在<strong>台南應用科技大學</strong>持續探索，專注於 <strong>TouchDesigner
+                            即時視覺演算、影音節奏剪輯與生活光影攝影隨拍</strong>。摩羯座的沉穩自律，讓我對影像畫面的連貫流暢、剪輯時間軸與視覺層次有著細緻的自我要求；而隨身攜帶手機走入街角與海岸的習慣，則讓我習慣駐足觀察自然光線在不同時刻的質地與溫度。
+                    </p>
+                    <p class="about-card-p">
+                        日常中，我喜歡戴上耳機聽著獨立音樂，騎上機車在市區裡兜風。穿梭在城市聚落與鄉村平疇之間，音符的起伏、相機快門定格的暮光霞彩與沿途掠過的自然景致，都是我進行影音與視覺動態演算時最深厚真誠的靈感養分。
+                    </p>
+                    <div class="about-highlights-list">
+                        <div class="about-highlight-item">
+                            <span class="hl-badge-num">01</span>
+                            <div>
+                                <strong>TouchDesigner 即時視覺演算</strong>
+                                <span>即時音訊頻譜反應、流體粒子動力學與沉浸式生成藝術展演</span>
+                            </div>
+                        </div>
+                        <div class="about-highlight-item">
+                            <span class="hl-badge-num">02</span>
+                            <div>
+                                <strong>影音剪輯與節奏敘事</strong>
+                                <span>精準掌控音樂節拍卡點、流暢運鏡分鏡與風格化氛圍調色</span>
+                            </div>
+                        </div>
+                        <div class="about-highlight-item">
+                            <span class="hl-badge-num">03</span>
+                            <div>
+                                <strong>光影紀實與鏡頭視野</strong>
+                                <span>定格晨昏逆光、台灣聚落街角與自然山海，轉化為有溫度的影像敘事</span>
+                            </div>
+                        </div>
+                        <div class="about-highlight-item">
+                            <span class="hl-badge-num">04</span>
+                            <div>
+                                <strong>互動感知與跨媒介共振</strong>
+                                <span>整合 MediaPipe 感測與 TouchDesigner 視覺演算，串接即時肢體訊號，創造充滿情感共鳴的沈浸式互動劇場。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-kicker">PILLAR 01</div>
+                        <h4 class="pillar-title">美感與鏡頭語言</h4>
+                        <p class="pillar-desc">敏銳的色溫直覺與自然構圖，擅長捕捉斜陽漫射與日常光影紋理。</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-kicker">PILLAR 02</div>
+                        <h4 class="pillar-title">演算與即時生成</h4>
+                        <p class="pillar-desc">熟練運用動態流體、粒子系統與音訊反應，透過即時演算法捕捉聲音律動，打造充滿生命力的視覺動態。</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-kicker">PILLAR 03</div>
+                        <h4 class="pillar-title">紀實與生活採集</h4>
+                        <p class="pillar-desc">捕捉公路、山林與日常光影的真實片刻，將生活中的每一份感動，轉化為數位創作中最溫暖的底蘊。</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-kicker">PILLAR 04</div>
+                        <h4 class="pillar-title">生活即是靈感</h4>
+                        <p class="pillar-desc">讓旋律與兜風時的微風沉澱思緒，在日常的波紋與光影中擷取靈感，淬鍊成專屬於自己的創作語彙。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             Section 2: Skills & Expertise (專長技能)
+             ========================================== -->
+        <section class="skills-section" id="skills-section">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">02 / EXPERTISE & CAPABILITIES</span>
+                <h2 class="info-section-title">
+                    <span>專長領域 · 專業技能與創作核心</span>
+                </h2>
+                <p class="section-desc">結合即時節點演算、影音節奏剪輯與相機光影美學，打造兼具技術深度與感官共鳴的作品。</p>
+            </div>
+
+            <div class="skills-categories-grid">
+
+                <!-- Skill Category 1: TouchDesigner Visual Computing -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-meta">
+                            <span class="cat-num">DISCIPLINE 01</span>
+                            <span class="cat-tag">Real-Time Graphics</span>
+                        </div>
+                        <h3 class="skill-cat-title">TouchDesigner 視覺演算</h3>
+                        <p class="skill-cat-desc">運用節點式即時圖形運算，創造與聲音、空間互動的動態衍生藝術。</p>
+                    </div>
+                    <div class="skill-deliverables-list">
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>即時音訊頻譜反應 (Audio-Reactive)</strong>
+                                <span>將聲音波形與頻率高低即時映射至幾何形變與光影明暗。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>粒子系統與動態流體 (Particle Systems)</strong>
+                                <span>建構萬級噪波粒子、空間力場與有機動態演算法。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>幾何光雕投影對位 (Kantan Mapper)</strong>
+                                <span>異形載體表面光影對位、即時影像變形與立體空間視覺。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>Live VJ 展演控制系統</strong>
+                                <span>串接即時視覺輸出、舞台背景連動與現場控場。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 2: Video Editing & Post-Production -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-meta">
+                            <span class="cat-num">DISCIPLINE 02</span>
+                            <span class="cat-tag">Post-Production</span>
+                        </div>
+                        <h3 class="skill-cat-title">影音剪輯與後期製作</h3>
+                        <p class="skill-cat-desc">憑藉對音樂節奏的敏銳度掌握剪輯脈絡，注重影像與聲音的契合度，編排流暢且帶有情感的影音作品。</p>
+                    </div>
+                    <div class="skill-deliverables-list">
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>音樂節奏卡點與動態流動</strong>
+                                <span>依循音樂的起伏與拍點，安排切鏡與轉場，讓影像隨著旋律自然流動。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>風格化氛圍調色 (Color Grading)</strong>
+                                <span>調整畫面的色調與冷暖對比，為影片營造出統一且舒適的視覺氛圍。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>基礎轉場、字卡與音效搭配</strong>
+                                <span>適度融入環境音效與流暢的轉場，讓畫面與聲音的搭配更加自然和諧。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>影音素材整合與編排</strong>
+                                <span>處理不同長度的畫面與素材，細心琢磨每一顆鏡頭的銜接與故事感。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 3: Visual Photography & Light Aesthetics -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-meta">
+                            <span class="cat-num">DISCIPLINE 03</span>
+                            <span class="cat-tag">Photography</span>
+                        </div>
+                        <h3 class="skill-cat-title">生活光影紀實與攝影</h3>
+                        <p class="skill-cat-desc">手持相機慢步走入生活與公路，定格時光流轉中稍縱即逝的光影純粹。</p>
+                    </div>
+                    <div class="skill-deliverables-list">
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>自然光線捕捉與構圖美學</strong>
+                                <span>善用晨曦、黃昏斜陽與林間光隙，形塑乾淨且富有溫度的畫面氛圍。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>公路紀行與沿海聚落隨拍</strong>
+                                <span>記錄公路視野、海岸風光與機車穿梭在嘉南平原與海岸線上的在地日常。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>生態與自然風景凝結</strong>
+                                <span>捕捉生態水鳥飛掠、山林倒影與花卉植物的真實生動特寫。</span>
+                            </div>
+                        </div>
+                        <div class="deliverable-item">
+                            <span class="deliv-bullet">✦</span>
+                            <div>
+                                <strong>數位暗房風格處理</strong>
+                                <span>保留高光與暗部細膩層次，微調色調與對比，呈現溫潤且耐看的視覺風格。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                >
+        </section>
+
+        <!-- ==========================================
+             Section 3: Photo Showcase & Gallery (作品相簿)
+             ========================================== -->
+        <section class="portfolio-section" id="portfolio-section">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">03 / SELECTED WORKS</span>
+                <h2 class="info-section-title">
+                    <span>精選作品相簿 · 攝影寫真與日常映象</span>
+                </h2>
+                <p class="section-desc">「用快門定格生活微光，把每一次心動的瞬間溫柔收藏。」共收錄 13 件攝影與生活創作，點擊可放大欣賞細緻畫質，亦支援自選上傳！</p>
+            </div>
+
+            <!-- Gallery Controls & Upload Bar -->
+            <div class="gallery-controls-bar">
+                <!-- Filter Tabs -->
+                <div class="portfolio-filter-bar">
+                    <button type="button" class="filter-btn active" data-filter="all">全部相片 (<span
+                            id="photo-total-badge">13</span>)</button>
+                    <button type="button" class="filter-btn" data-filter="street">📸 攝影隨拍</button>
+                    <button type="button" class="filter-btn" data-filter="nature">🌅 自然山海</button>
+                    <button type="button" class="filter-btn" data-filter="campus">🏫 校園與生活</button>
+                </div>
+
+                <!-- Add Photo Action Button & Local Upload Input -->
+                <div class="photo-actions-right">
+                    <button type="button" class="add-photo-btn" id="trigger-photo-upload" title="點擊放上你的自訂照片">
+                        <span class="btn-camera-icon">📸</span>
+                        <span>放上我的相片</span>
+                        <span class="btn-plus-badge">＋</span>
+                    </button>
+                    <input type="file" id="user-photo-input" accept="image/*" multiple style="display: none;">
+                </div>
+            </div>
+
+            <!-- Photo Dropzone / Upload Hint Banner -->
+            <div class="photo-dropzone-notice" id="dropzone-notice">
+                <span class="dropzone-icon">✨</span>
+                <span>作品相簿已整理至專屬資料夾！點擊上方「<strong>放上我的相片</strong>」或將相片檔案拖曳至此處，即可即時新增個人自訂相片。</span>
+            </div>
+
+            <!-- Photo Gallery Grid (13 Works) -->
+            <div class="portfolio-grid photo-gallery-grid" id="portfolio-grid">
+
+                <!-- Photo 1: Water Bird Takeoff -->
+                <article class="portfolio-card photo-card" data-category="street nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="水鳥飛躍 moment · 100mm f2.8 · 安平區">
+                        <img src="photo/bird.jpg" alt="水鳥飛躍 moment" loading="lazy">
+                        <span class="portfolio-category-badge">生態飛鳥</span>
+                        <span class="photo-lens-tag">100mm · f2.8</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">水鳥飛躍 moment</h3>
+                            <span class="photo-location-tag">📍 安平水域</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            捕捉白鷺鷥輕盈掠過水面的動態瞬間。展翅的姿態與水面微瀾遙相呼應，在靜謐天空下定格生命最輕快的節奏。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 17 Pro</span>
+                            <span class="photo-param-pill">自然生態</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">428</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 2: Bird Golden Reflection -->
+                <article class="portfolio-card photo-card" data-category="nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="水鳥與金黃倒影 · 100mm f2.8 · 安平區">
+                        <img src="photo/bird-2.jpg" alt="水鳥與金黃倒影" loading="lazy">
+                        <span class="portfolio-category-badge">水岸倒影</span>
+                        <span class="photo-lens-tag">100mm · f2.8</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">水鳥與金黃倒影</h3>
+                            <span class="photo-location-tag">📍 安平水域</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            斜陽灑落水面，將佇立的白鷺鷥染上一層金黃微光。水波悠悠盪開，映照出如畫般的波紋倒影與歲月靜好。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 17 Pro</span>
+                            <span class="photo-param-pill">暮光水岸</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">562</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 3: Shell Macro -->
+                <article class="portfolio-card photo-card" data-category="nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="海岸拾貝特寫 · 100mm f2.8 · 安平區">
+                        <img src="photo/5.jpg" alt="海岸拾貝特寫" loading="lazy">
+                        <span class="portfolio-category-badge">微距光影</span>
+                        <span class="photo-lens-tag">100mm · f2.8</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">海岸拾貝特寫</h3>
+                            <span class="photo-location-tag">📍 安平海岸</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            在沙灘邊排開的海螺特寫。藉由淺景深與鏡頭對焦，記錄下海浪與時光雕琢出的自然螺旋紋理與大地印記。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 14 Pro</span>
+                            <span class="photo-param-pill">淺景深微距</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">389</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 4: Mountain Mirror & Submerged Wood -->
+                <article class="portfolio-card photo-card" data-category="nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="山林靜謐與沉木水鏡 · 13mm f2.2 · 南投縣">
+                        <img src="photo/8820.JPG" alt="山林靜謐與沉木水鏡" loading="lazy">
+                        <span class="portfolio-category-badge">山林秘境</span>
+                        <span class="photo-lens-tag">13mm · f2.2</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">山林靜謐與沉木水鏡</h3>
+                            <span class="photo-location-tag">📍 南投忘憂森林</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            漫步至薄霧繚繞的山林深處，清澈水潭如鏡面般映照出高聳佇立的樹影與沉木，記錄下遠離喧囂的原始靜謐。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 14 Pro</span>
+                            <span class="photo-param-pill">倒影水鏡</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">680</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 5: Sunset Oyster Farm -->
+                <article class="portfolio-card photo-card" data-category="nature street">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="暮光蚵田與海上霞光 · 24mm f1.78 · 安平區">
+                        <img src="photo/0481.JPG" alt="暮光蚵田與海上霞光" loading="lazy">
+                        <span class="portfolio-category-badge">黃昏海岸</span>
+                        <span class="photo-lens-tag">24mm · f1.78</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">暮光蚵田與海上霞光</h3>
+                            <span class="photo-location-tag">📍 安平海岸</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            追隨夕陽西下的腳步來到海邊，目睹火紅暮光溫柔渲染天空與雲層。排列有序的蚵架在金黃波光中沉靜佇立。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 17 Pro</span>
+                            <span class="photo-param-pill">海上暮色</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">350</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 6: Blue Ocean & Coastal Rocks -->
+                <article class="portfolio-card photo-card" data-category="nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="蔚藍海岸與岩礁印記 · 100mm f2.8 · 滿洲鄉">
+                        <img src="photo/0880.JPG" alt="蔚藍海岸與岩礁印記" loading="lazy">
+                        <span class="portfolio-category-badge">海岸地形</span>
+                        <span class="photo-lens-tag">100mm · f2.8</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">蔚藍海岸與岩礁印記</h3>
+                            <span class="photo-location-tag">📍 滿洲佳樂水</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            太平洋浪花長年沖刷出的岩礁紋理。在陽光照射下，礁石與深藍海水形成強烈明暗對比，呈現大自然雄渾的雕塑力。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 17 Pro</span>
+                            <span class="photo-param-pill">礁石地貌</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">395</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 7: Sunset Ocean Horizon -->
+                <article class="portfolio-card photo-card" data-category="nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="黃昏餘暉與暗夜海浪 · 50mm f1.78 · 安平海岸">
+                        <img src="photo/5.png" alt="黃昏餘暉與暗夜海浪" loading="lazy">
+                        <span class="portfolio-category-badge">暮霞海岸</span>
+                        <span class="photo-lens-tag">50mm · f1.78</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">黃昏餘暉與暗夜海浪</h3>
+                            <span class="photo-location-tag">📍 安平海岸</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            當太陽沒入厚重雲層之後，金黃色的霞光仍在天空中撕開一道溫柔的光隙。暗色調的海浪拍打著岸邊，沉靜的氛圍讓人不由自主地駐足凝視。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 17 Pro</span>
+                            <span class="photo-param-pill">黃昏餘暉</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">512</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 8: Mountain Ridges & Morning Mist -->
+                <article class="portfolio-card photo-card" data-category="nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="夜幕光束與雷射光影 · 77mm f2.8 · 太保市">
+                        <img src="photo/0823.JPG" alt="夜幕光束與雷射光影" loading="lazy">
+                        <span class="portfolio-category-badge">展場光雕</span>
+                        <span class="photo-lens-tag">24mm · f1.78</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">夜幕光束與雷射光影</h3>
+                            <span class="photo-location-tag">📍 太保市</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            夜幕低垂時分，強烈而精準的藍色光束直衝雲霄，將空氣與夜空染上夢幻般的視覺效果。人群佇立在光影交織的場域中，感受科技與藝術碰撞出的視覺震撼。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 17 Pro</span>
+                            <span class="photo-param-pill">光雕藝術</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">486</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 9: Panoramic Mountain Horizon -->
+                <article class="portfolio-card photo-card" data-category="nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="湖光山色與岸邊建築 · 24mm f1.78 · 魚池鄉">
+                        <img src="photo/1174.JPG" alt="湖光山色與岸邊建築" loading="lazy">
+                        <span class="portfolio-category-badge">水岸建築</span>
+                        <span class="photo-lens-tag">100mm · f2.8</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">湖光山色與岸邊建築</h3>
+                            <span class="photo-location-tag">📍 魚池鄉</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            微風拂過碧藍的水面，遠處翠綠的山巒與水岸邊的建築遙相呼應。天空中飄著幾朵白雲，勾勒出一幅愜意而充滿度假感的山水畫卷。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 17 Pro</span>
+                            <span class="photo-param-pill">湖光山色</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">460</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 10: Highway Mountain View -->
+                <article class="portfolio-card photo-card" data-category="street nature">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="大麗花與細微脈絡 · 77mm f2.8 · 苗栗縣">
+                        <img src="photo/2362.JPG" alt="大麗花與細微脈絡" loading="lazy">
+                        <span class="portfolio-category-badge">植物特寫</span>
+                        <span class="photo-lens-tag">24mm · f1.78</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">大麗花與細微脈絡</h3>
+                            <span class="photo-location-tag">📍 苗栗縣</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            靠近觀察這朵盛開的花卉，濃郁的紫紅色花瓣從中心向外層層綻放。細緻的紋理與幾何般的排列，記錄了大自然最精巧、生動的生命色彩。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 14 Pro</span>
+                            <span class="photo-param-pill">鮮艷花卉</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">538</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 11: Campus Dusk Light -->
+                <article class="portfolio-card photo-card" data-category="campus street">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="雲端漫遊與湛藍天際 · 24mm f1.78 · 東海、太平洋上的天空">
+                        <img src="photo/3242.JPG" alt="雲端漫遊與湛藍天際" loading="lazy">
+                        <span class="portfolio-category-badge">高空視角</span>
+                        <span class="photo-lens-tag">77mm · f2.8</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">雲端漫遊與湛藍天際</h3>
+                            <span class="photo-location-tag">📍 東海、太平洋上的天空</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            透過機艙狹小的舷窗俯瞰萬米高空，朵朵積雲如棉花般在湛藍的天際線上綻放。凝視著這片純粹的藍與白，心境也隨之飛翔在無邊無際的雲海之中。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 14 Pro</span>
+                            <span class="photo-param-pill">湛藍雲海</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">624</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photo 12: Street Sunbeam Walk -->
+                <article class="portfolio-card photo-card" data-category="street campus">
+                    <div class="portfolio-img-wrap zoomable-img" data-caption="夏日赤富士與山麓聚落 · 35mm f2.0 · 巷弄漫遊">
+                        <img src="photo/3556.JPG" alt="夏日赤富士與山麓聚落" loading="lazy">
+                        <span class="portfolio-category-badge">旅途地標</span>
+                        <span class="photo-lens-tag">77mm · f2.8</span>
+                        <div class="photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大相片</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="photo-title-row">
+                            <h3 class="portfolio-title">夏日赤富士與山麓聚落</h3>
+                            <span class="photo-location-tag">📍 城市街角</span>
+                        </div>
+                        <p class="portfolio-desc">
+                            旅途中偶然抬頭，雄偉的山體在晴空下展現出沉穩而壯麗的輪廓。山腳下寧靜的村落與綠意，層層疊疊堆砌出屬於山麓小鎮獨有的和諧與平靜。
+                        </p>
+                        <div class="photo-meta-row">
+                            <span class="photo-param-pill">IPhone 14 Pro</span>
+                            <span class="photo-param-pill">遠眺山脈</span>
+                            <button type="button" class="photo-like-mini-btn" title="喜歡這張相片">
+                                <span class="heart-icon">💖</span>
+                                <span class="like-num">475</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             Section 4: Honors & Certificates (榮譽獎狀與研習證明專區 - 專門放照片)
+             ========================================== -->
+        <section class="awards-section" id="awards-section">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">04 / HONORS & CERTIFICATES</span>
+                <h2 class="info-section-title">
+                    <span>榮譽獎狀與研習證明</span>
+                </h2>
+                <p class="section-desc">「每一次全心投入的探索，都在時間長河裡凝固成踏實的印記。」專屬收錄 13 張競賽與校園獎狀，以及 2 張專業研習結業證明。點擊照片即可放大欣賞高畫質大圖！
+                </p>
+            </div>
+
+            <!-- Awards Controls Bar -->
+            <div class="awards-controls-bar">
+                <div class="awards-filter-bar">
+                    <button type="button" class="award-filter-btn active" data-filter="all">全部展示 (<span
+                            id="award-total-badge">15</span>)</button>
+                    <button type="button" class="award-filter-btn" data-filter="award">🏆 獲獎獎狀 (13)</button>
+                    <button type="button" class="award-filter-btn" data-filter="study">📜 研習證明 (2)</button>
+                </div>
+
+                <div class="award-actions-right">
+                    <button type="button" class="add-award-btn" id="trigger-award-upload" title="上傳或新增更多獎狀照片">
+                        <span class="award-btn-icon">📸</span>
+                        <span>放上我的新獎狀</span>
+                        <span class="award-plus-badge">＋</span>
+                    </button>
+                    <input type="file" id="user-award-input" accept="image/*" multiple style="display: none;">
+                </div>
+            </div>
+
+            <!-- Scalable Dynamic Hint Banner -->
+            <div class="award-dropzone-notice" id="award-dropzone-notice">
+                <span class="award-hint-icon">✦</span>
+                <span>已收錄 <strong>13 張榮譽獎狀</strong> 與 <strong>2
+                        張研習結業證明</strong>！點擊任何獎狀照片皆可彈出清晰原圖檢視，亦可拖曳照片至此處即時新增。</span>
+            </div>
+
+            <!-- Awards Photo Grid (13 Awards + 2 Study Certificates) -->
+            <div class="awards-photo-grid" id="awards-grid">
+
+                <!-- 1. 2022 長庚生物科技 感恩創作活動 佳作 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="長庚生物科技 · 2022 感恩創作活動 繪圖國高中組 佳作">
+                        <img src="award/長庚生物科技.png" alt="長庚生物科技 2022 感恩創作活動 榮譽狀" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🏆 繪圖競賽 · 佳作</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">長庚生物科技 · 感恩創作活動 榮譽狀</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">長庚生物科技</span>
+                            <span class="award-awardee-name">翁珮婷 · 國高中組佳作</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. 聖誕卡設計大賽 佳作 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="國立後壁高級中學 多媒體設計科 · 2023 聖誕卡設計大賽 佳作">
+                        <img src="award/聖誕卡設計大賽.png" alt="後壁高中多媒科 2023 聖誕卡設計大賽 佳作" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🏆 設計競賽 · 佳作</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">2023 聖誕卡設計大賽 · 佳作</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">後壁高中多媒科</span>
+                            <span class="award-awardee-name">翁珮婷 · 112.12.25</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. 校內國語文競賽 寫字 優勝 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="國立後壁高級中學 · 111 學年度校內國語文競賽 寫字 優勝">
+                        <img src="award/國語文競賽.png" alt="後壁高中 111學年度國語文競賽寫字優勝" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🏆 語文競賽 · 優勝</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">111 學年度校內國語文競賽 · 寫字 優勝</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">國立後壁高中</span>
+                            <span class="award-awardee-name">多媒二 翁珮婷 · 112.03.13</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. 民主法治教育競賽 書法比賽 佳作 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="國立後壁高級中學 · 111 學年度民主法治教育競賽 書法比賽 佳作">
+                        <img src="award/民主法治教育競賽.png" alt="後壁高中 民主法治教育競賽 書法比賽 佳作" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🏆 書法競賽 · 佳作</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">民主法治教育競賽 · 書法比賽 佳作</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">國立後壁高中</span>
+                            <span class="award-awardee-name">多媒二 翁珮婷 · 111.11.01</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. 111 學年度優秀生 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="國立後壁高級中學 · 111 學年度優秀生榮譽狀 (品學兼備)">
+                        <img src="award/111 學年度優秀生.png" alt="後壁高中 111學年度優秀生榮譽狀" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🎓 校園榮譽 · 優秀生</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">111 學年度優秀生榮譽狀</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">國立後壁高中</span>
+                            <span class="award-awardee-name">品學兼備 · 111.10.25</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6. 111 學年度禮貌生 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="國立後壁高級中學 · 111 學年度禮貌生榮譽狀 (勤樸謙和)">
+                        <img src="award/111學年度禮貌生.png" alt="後壁高中 111學年度禮貌生榮譽狀" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🎓 校園榮譽 · 禮貌生</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">111 學年度禮貌生榮譽狀</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">國立後壁高中</span>
+                            <span class="award-awardee-name">勤樸謙和 · 112.03.08</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. 高一女生組 200 公尺 第一名 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img"
+                        data-caption="國立後壁高級中學 第 67 屆全校運動大會 · 高一女 200公尺 第一名 (33秒39)">
+                        <img src="award/高一女200公尺.png" alt="後壁高中 第67屆運動大會 高一女200公尺 第一名" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🥇 田徑運動 · 第一名</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">第 67 屆運動會 · 高一女 200m 第一名</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">田徑錦標賽</span>
+                            <span class="award-awardee-name">成績 33秒39 · 冠軍殊榮</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8. 高二女生組 200 公尺 第二名 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img"
+                        data-caption="國立後壁高級中學 第 68 屆全校運動大會 · 高二女 200公尺 第二名 (34秒25)">
+                        <img src="award/高二女200公尺.png" alt="後壁高中 第68屆運動大會 高二女200公尺 第二名" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🥈 田徑運動 · 第二名</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">第 68 屆運動會 · 高二女 200m 第二名</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">田徑錦標賽</span>
+                            <span class="award-awardee-name">成績 34秒25 · 亞軍殊榮</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 9. 高三女生組 200 公尺 第二名 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img"
+                        data-caption="國立後壁高級中學 第 69 屆全校運動大會 · 高三女 200公尺 第二名 (34秒04)">
+                        <img src="award/高三女200公尺.png" alt="後壁高中 第69屆運動大會 高三女200公尺 第二名" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🥈 田徑運動 · 第二名</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">第 69 屆運動會 · 高三女 200m 第二名</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">田徑錦標賽</span>
+                            <span class="award-awardee-name">成績 34秒04 · 亞軍殊榮</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 10. 高二女生組 400 公尺 第五名 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img"
+                        data-caption="國立後壁高級中學 第 68 屆全校運動大會 · 高二女 400公尺 第五名 (1分06秒62)">
+                        <img src="award/高二女400公尺.png" alt="後壁高中 第68屆運動大會 高二女400公尺 第五名" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🏃‍♀️ 田徑運動 · 第五名</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">第 68 屆運動會 · 高二女 400m 第五名</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">田徑錦標賽</span>
+                            <span class="award-awardee-name">成績 1分06秒62 · 表現優異</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 11. 學生自治幹部 服務證書 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="國立後壁高級中學 · 110-111學年度 學生自治幹部 服務證書">
+                        <img src="award/學生自治幹部.png" alt="後壁高中 學生自治幹部 服務證書" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🤝 服務榮譽 · 自治幹部</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">學生自治幹部 · 服務證書</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">國立後壁高中</span>
+                            <span class="award-awardee-name">服務時數 3學期 · 盡職負責</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 12. 學校自治幹部 服務證書 (200小時) -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img"
+                        data-caption="國立後壁高級中學 · 學校自治幹部 服務證書 (服務時數 5學期 200小時)">
+                        <img src="award/學校自治幹部.png" alt="後壁高中 學校自治幹部 服務證書 200小時" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🤝 服務榮譽 · 200小時</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">學校自治幹部 · 服務證書</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">國立後壁高中</span>
+                            <span class="award-awardee-name">服務時數 5學期 200小時</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 13. 學生自治服務隊 服務證書 -->
+                <article class="award-photo-card" data-category="award">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="國立後壁高級中學 · 110-111學年度 學生自治服務隊 服務證書">
+                        <img src="award/學生自治服務隊.png" alt="後壁高中 學生自治服務隊 服務證書" loading="lazy">
+                        <span class="award-badge-pill award-badge-award">🤝 服務榮譽 · 自治服務隊</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">學生自治服務隊 · 服務證書</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">國立後壁高中</span>
+                            <span class="award-awardee-name">多媒科 翁珮婷 · 熱忱服務</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 14. 111 年度少年多媒體製作營 結業證書 -->
+                <article class="award-photo-card" data-category="study">
+                    <div class="award-photo-img-wrap zoomable-img"
+                        data-caption="內政部警政署刑事警察局 · 111年度少年多媒體製作營 結業證書 (10小時研習)">
+                        <img src="award/111年度少年多媒體製作營.png" alt="內政部警政署刑事警察局 111年度少年多媒體製作營 結業證書" loading="lazy">
+                        <span class="award-badge-pill award-badge-study">📜 研習證明 · 多媒體製作營</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">少年多媒體製作營 · 結業證書</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">警政署刑事警察局</span>
+                            <span class="award-awardee-name">共計10小時 · 翁珮婷</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 15. 學生安全教育 研習證書 -->
+                <article class="award-photo-card" data-category="study">
+                    <div class="award-photo-img-wrap zoomable-img" data-caption="教育部臺南市聯絡處 · 112年「學生安全教育」研習證書 (共計2日)">
+                        <img src="award/「學生安全教育」研習.png" alt="教育部臺南市聯絡處 112年學生安全教育研習證書" loading="lazy">
+                        <span class="award-badge-pill award-badge-study">📜 研習證明 · 學生安全教育</span>
+                        <div class="award-photo-hover-overlay">
+                            <span class="hover-zoom-btn">🔍 點擊放大檢視</span>
+                        </div>
+                    </div>
+                    <div class="award-photo-info">
+                        <h3 class="award-photo-title">「學生安全教育」研習證書</h3>
+                        <div class="award-photo-meta">
+                            <span class="award-issuer-badge">教育部臺南市聯絡處</span>
+                            <span class="award-awardee-name">共計2日 · 翁珮婷</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             Section 5: Interactive Life & Walkman Widgets (隨身聽播放器 & 公路兜風)
+             ========================================== -->
+        <section class="widgets-grid" id="widgets-section">
+
+            <!-- Multi-Song Walkman / Music Player Widget -->
+            <article class="widget-card" id="music-widget">
+                <div class="widget-header">
+                    <div class="widget-meta-pill">PORTABLE WALKMAN</div>
+                    <h3 class="widget-title">
+                        <span>隨身聽 · 自由歌單探索</span>
+                    </h3>
+                    <div class="wave-bars" id="wave-bars">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+
+                <div class="music-player-inner">
+                    <div class="track-info">
+                        <div class="vinyl-disc" id="vinyl-disc">
+                            <div class="vinyl-center" id="vinyl-center-monogram">01</div>
+                        </div>
+                        <div class="track-meta">
+                            <div class="track-header-row">
+                                <span class="track-genre-pill" id="music-genre-tag">Acoustic Pop</span>
+                                <span class="track-counter-pill" id="music-track-idx">01 / 05</span>
+                            </div>
+                            <div class="track-title" id="music-title">Little Bit Better 🎵</div>
+                            <div class="track-artist" id="music-artist">Caleb Hearn & ROSIE</div>
+                            <div class="track-lyrics" id="music-lyrics">
+                                "Makes the hard days feel a little bit lighter..."
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Player Navigation & Playback Controls -->
+                    <div class="player-controls">
+                        <button type="button" class="player-nav-btn" id="prev-music-btn" title="切換至上一首"
+                            aria-label="上一首">
+                            <span>⏮️</span>
+                        </button>
+                        <button type="button" class="play-toggle-btn" id="play-music-btn">
+                            <span id="play-icon">▶️</span>
+                            <span id="play-label">播放音樂</span>
+                        </button>
+                        <button type="button" class="player-nav-btn" id="next-music-btn" title="切換至下一首"
+                            aria-label="下一首">
+                            <span>⏭️</span>
+                        </button>
+                        <button type="button" class="playlist-toggle-btn" id="playlist-toggle-btn" title="查看全部歌曲清單">
+                            <span>📋</span>
+                            <span>歌單 (5)</span>
+                        </button>
+                        <a href="https://www.youtube.com/results?search_query=Caleb+Hearn+ROSIE+Little+Bit+Better"
+                            target="_blank" rel="noopener noreferrer" class="music-link-btn" id="music-mv-link"
+                            title="在 YouTube 上聆聽原曲 MV">
+                            <span>🎧 MV ↗</span>
+                        </a>
+                    </div>
+
+                    <!-- Interactive Playlist Drawer (點擊任一首即可立即切換與播放) -->
+                    <div class="playlist-container" id="playlist-container">
+                        <div class="playlist-header">
+                            <span class="playlist-heading">🎵 隨身聽選曲庫</span>
+                            <span class="playlist-tip">點選下方曲目即可即時切換播放</span>
+                        </div>
+                        <div class="playlist-items-list" id="playlist-items-list">
+                            <!-- Injected by script.js dynamically -->
+                        </div>
+                        <div class="music-edit-tip">
+                            <span>💡 <strong>自訂歌曲指南</strong>：可打開 <code>script.js</code>，在最上方的
+                                <code>MUSIC_PLAYLIST</code> 陣列中自由修改歌名、歌手、歌詞與 YouTube 連結！</span>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- Scooter / Riding Widget (更新為永康 ⇄ 安平在地路線) -->
+            <article class="widget-card" id="riding-widget">
+                <div class="widget-header">
+                    <div class="widget-meta-pill">ROAD JOURNAL</div>
+                    <h3 class="widget-title">
+                        <span>台南兜風 · 永康 ⇄ 安平日常</span>
+                    </h3>
+                    <span class="tag-badge">Free Ride</span>
+                </div>
+
+                <div class="riding-inner">
+                    <!-- 上方統計方塊 -->
+                    <div class="riding-stats-row">
+                        <div class="riding-stat-item">
+                            <span class="riding-stat-number" id="riding-km">25 km</span>
+                            <span class="riding-stat-title">單趟尋光里程</span>
+                        </div>
+                        <div class="riding-stat-item">
+                            <span class="riding-stat-number riding-stat-route">台南永康 ⇄ 安平海岸</span>
+                            <span class="riding-stat-title">常跑探索路線</span>
+                        </div>
+                        <div class="riding-stat-item">
+                            <span class="riding-stat-number">70%</span>
+                            <span class="riding-stat-title">靈感滿載度</span>
+                        </div>
+                    </div>
+
+                    <!-- 小工具狀態欄 -->
+                    <div class="riding-status-pills">
+                        <span class="status-pill">🌤️ 台南好天氣 · 微風徐徐</span>
+                        <span class="status-pill">🎧 隨身聽熱播中</span>
+                        <span class="status-pill">🛵 點擊機車催油門</span>
+                    </div>
+
+                    <!-- 進度條儀表板 -->
+                    <div class="riding-track-wrapper">
+                        <div class="riding-track">
+                            <div class="riding-progress" id="riding-progress-bar">
+                                <span class="riding-scooter-icon" id="scooter-icon" title="點擊催油門向前！🛵">🛵</span>
+                            </div>
+                        </div>
+                        <div class="riding-track-endpoints">
+                            <span>📍 台南永康</span>
+                            <span>🏁 安平海岸夕陽 (約 25 km)</span>
+                        </div>
+                    </div>
+
+                    <!-- 底部金句 -->
+                    <p class="riding-quote">「戴上安全帽，耳機裡流淌著音樂，從永康出發騎向安平海岸，追逐黃昏灑落波光的每一刻感動。」</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Mini Game: Totoro Acorn Catch (龍貓接堅果小遊戲) -->
+        <section class="game-section" id="totoro-game-section">
+            <div class="game-card">
+                <div class="game-header">
+                    <div>
+                        <div class="badge-row" style="margin-bottom: 0.4rem;">
+                            <span class="tag-badge">🎮 互動小遊戲</span>
+                            <span class="tag-badge" style="background: rgba(197, 152, 54, 0.15); color: #b45309;">✨ 30
+                                秒敏捷挑戰</span>
+                        </div>
+                        <h2 class="info-section-title" style="margin-bottom: 0.25rem;">
+                            <span>🐾 龍貓接堅果大冒險</span>
+                        </h2>
+                        <p style="color: var(--text-muted); font-size: 0.92rem;">
+                            滑動小龍貓，接住美味堅果 🌰、草莓 🍓 與幸運星 ⭐，避開刺刺烏雲 ⚡！
+                        </p>
+                    </div>
+
+                    <!-- Game HUD Stats -->
+                    <div class="game-hud">
+                        <div class="hud-item">
+                            <span class="hud-label">得分</span>
+                            <span class="hud-value" id="game-score">0</span>
+                        </div>
+                        <div class="hud-item">
+                            <span class="hud-label">倒數</span>
+                            <span class="hud-value" id="game-timer">30s</span>
+                        </div>
+                        <div class="hud-item">
+                            <span class="hud-label">最佳紀錄</span>
+                            <span class="hud-value" id="game-highscore">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Stage Canvas -->
+                <div class="game-stage-wrapper" id="game-stage">
+                    <canvas id="game-canvas"></canvas>
+
+                    <!-- Overlay Start / Game Over Screen -->
+                    <div class="game-overlay" id="game-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon" id="overlay-icon">🌰</div>
+                            <h3 class="overlay-title" id="overlay-title">龍貓接堅果大作戰</h3>
+                            <p class="overlay-desc" id="overlay-desc">
+                                用滑鼠、手指滑動或鍵盤方向鍵 (◀ ▶) 左右移動小龍貓，接住越多美食分數越高！
+                            </p>
+                            <button type="button" class="game-start-btn" id="game-start-btn">
+                                <span>▶️ 開始遊戲</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Touch Mobile Controls for Phones/Tablets -->
+                    <div class="mobile-touch-bar">
+                        <button type="button" class="touch-btn" id="btn-left">◀ 向左移動</button>
+                        <button type="button" class="touch-btn" id="btn-right">向右移動 ▶</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             Section 6: Learning Journey / Timeline (學習歷程)
+             ========================================== -->
+        <section class="timeline-section" id="timeline-section">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">05 / MILESTONES & LEARNING</span>
+                <h2 class="info-section-title">
+                    <span>學習歷程 · 成長軌跡與里程碑</span>
+                </h2>
+                <p class="section-desc">踏實走好每一步，用熱情與好奇心編織屬於自己的學習地圖。</p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Node 1: 2026 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span>⚡</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date-badge">2026 · 現在進行式</div>
+                        <h3 class="timeline-item-title">TouchDesigner 探索與音訊反應互動實作</h3>
+                        <p class="timeline-item-desc">
+                            正在接觸 TouchDesigner，正逐步摸索節點演算、Audio-Reactive 音訊反應與粒子系統的奧妙。從基礎邏輯到動態視覺串接，一步步將想法化為即時演出的視覺畫面。
+                        </p>
+                        <div class="timeline-meta-tags">
+                            <span>#TouchDesigner</span>
+                            <span>#即時視覺演算</span>
+                            <span>#Audio-Reactive</span>
+                            <span>#新手探索中</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 2: 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span>🎛️</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date-badge">2025 · 探索期</div>
+                        <h3 class="timeline-item-title">探索興趣與日常靈感光影、音樂共振與公路日常</h3>
+                        <p class="timeline-item-desc">
+                            隨身攜帶手機捕捉台南街頭的光影、安平海岸的落日餘暉與日常風景，將這些真實的視覺素材轉化為日後的靈感養分。熱愛探索各種類型的音樂，並在騎著機車穿梭於台南永康與安平海岸線的兜風日常中，在引擎聲與風聲裡放空思緒，沉澱出創作時的全新靈感。
+                        </p>
+                        <div class="timeline-meta-tags">
+                            <span>#街頭攝影</span>
+                            <span>#生活靈感</span>
+                            <span>#音樂共振</span>
+                            <span>#台南日常兜風</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 3: 2024 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span>🌱</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date-badge">2024 · 啟航</div>
+                        <h3 class="timeline-item-title">進入台南應用科技大學 · 啟蒙新媒體藝術與生成式設計</h3>
+                        <p class="timeline-item-desc">
+                            在充滿文化風韻與藝文底蘊的台南展開校園生活。一次偶然在網路上接觸到
+                            TouchDesigner，立刻被即時演算與聲光共振的無限魅力深深吸引，從此展開自學與探索之路，確立以新媒體互動視覺為志向。
+                        </p>
+                        <div class="timeline-meta-tags">
+                            <span>#新媒體藝術</span>
+                            <span>#TouchDesigner</span>
+                            <span>#自主學習</span>
+                            <span>#生成式設計</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 4: Daily Life Inspiration -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <span>🛵</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date-badge">日常積累 · 靈感之源</div>
+                        <h3 class="timeline-item-title">台南永康 ⇄ 安平海岸 · 尋光追風日常</h3>
+                        <p class="timeline-item-desc">
+                            騎乘機車穿梭於台南永康與安平海岸之間，在海風與音樂相伴的黃昏路途中，將思緒放空並沉澱靈感；在真實的在地日常裡感受風景與光影的流轉，讓每一個創作都帶著生活的溫度。 </p>
+                        <div class="timeline-meta-tags">
+                            <span>#台南兜風</span>
+                            <span>#安平海岸</span>
+                            <span>#生活美學</span>
+                            <span>#靈感採集</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             Section 7: Contact Me (與我聯絡)
+             ========================================== -->
+        <section class="contact-section" id="contact-section">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">06 / GET IN TOUCH</span>
+                <h2 class="info-section-title">
+                    <span>與我聯絡 · 交流與合作</span>
+                </h2>
+                <p class="section-desc">無論是新媒體視覺討論、TouchDesigner 互動實作、攝影心得分享，或只是想聊聊台南的日常兜風與音樂靈感，都非常歡迎隨時與我聯繫！</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Card -->
+                <div class="contact-info-card">
+                    <div class="contact-avatar-badge">
+                        <span class="contact-avatar-icon">💌</span>
+                        <div>
+                            <h3 class="contact-name">翁珮婷 · Ting</h3>
+                            <span class="contact-role">台南應用科技大學 · 新媒體學生創作者</span>
+                        </div>
+                    </div>
+                    <p class="contact-intro-text">
+                        感謝您造訪 Ting's Space！若您對我的視覺演算、影音剪輯或光影作品有任何想法或合作意向，歡迎透過下方資訊或填寫表單與我聯絡。 </p>
+
+                    <div class="contact-methods-list">
+                        <div class="contact-method-item">
+                            <span class="method-icon">📧</span>
+                            <div>
+                                <span class="method-label">電子信箱 Email</span>
+                                <a href="mailto:ting.creative.space@example.com"
+                                    class="method-val">ting.creative.space@example.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method-item">
+                            <span class="method-icon">📍</span>
+                            <div>
+                                <span class="method-label">目前所在地 Location</span>
+                                <span class="method-val">台南市永康區</span>
+                            </div>
+                        </div>
+                        <div class="contact-method-item">
+                            <span class="method-icon">🛵</span>
+                            <div>
+                                <span class="method-label">兜風出沒範圍 Riding Zone</span>
+                                <span class="method-val">台南永康 ⇄ 安平海岸</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Contact Form Card -->
+                <div class="contact-form-card">
+                    <h3 class="form-title">
+                        <span>發送訊息給珮婷</span>
+                    </h3>
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="contact-name-input" class="form-label">您的稱呼 / 姓名 <span
+                                        class="required">*</span></label>
+                                <input type="text" id="contact-name-input" class="form-input"
+                                    placeholder="例如：林同學 / 陳設計師" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email-input" class="form-label">電子信箱 Email <span
+                                        class="required">*</span></label>
+                                <input type="email" id="contact-email-input" class="form-input"
+                                    placeholder="name@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject-input" class="form-label">主旨 Subject</label>
+                            <input type="text" id="contact-subject-input" class="form-input"
+                                placeholder="例如：新媒體視覺交流、影音剪輯合作洽詢、心得交流...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-msg-input" class="form-label">留言內容 Message <span
+                                    class="required">*</span></label>
+                            <textarea id="contact-msg-input" class="form-textarea" rows="4"
+                                placeholder="歡迎寫下您的想法、給珮婷的建議與應援，或任何想聊的內容..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="contact-submit-btn">
+                            <span class="btn-icon">💌</span>
+                            <span class="btn-text">送出留言訊息</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="footer-logo">✦ Ting's Space</span>
+                    <p class="footer-quote">「以光影定格瞬間，以演算法編織動態。用心生活，記錄每一個美好而真實的細節。」</p>
+                </div>
+                <div class="footer-meta">
+                    <p>© 2026 翁珮婷 (Ting) · 台南應用科技大學</p>
+                    <p class="footer-tech">Designed with Craft & Editorial Aesthetics</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Lightbox Modal (For Works & Certificates) -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="圖片放大預覽">
+        <div class="lightbox-content">
+            <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="關閉預覽">✕</button>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
